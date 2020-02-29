@@ -1,0 +1,1 @@
+web: gunicorn caninehotel_spa.wsgi --log--file -
