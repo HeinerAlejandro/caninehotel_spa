@@ -1,0 +1,34 @@
+{% extends 'base_caninehotel.html' %}
+
+{% block title %}-habitaciones{% endblock %}
+
+{% load static %}
+
+{% block body %}
+
+	<div class = 'container'>
+		<section class = "sample-text-area">
+			<h3 class="text-heading title_color">Seccion de Habitaciones</h3>
+		</section>
+
+		<div class = 'progress-table-wrap'>
+			<div class = 'progress-table'>
+				<div class = 'table-head spacing-head'>
+					
+				</div>
+			</div>
+		</div>
+
+		<form>
+			<input type="number" name="number" placeholder="Numero de habitacion" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Numero de habitacion'" required class="single-input">
+			<input type="number" name="cost" placeholder="Costo" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Costo'" required class="single-input">
+			<button class="genric-btn primary mt-10">GUARDAR</button>
+		</form>
+	</div>
+
+
+{% endblock %}
+
+{% block custom_scripts %}
+	<script type="text/javascript" src = "{% static 'room.js' %}"></script>
+{% endblock %}

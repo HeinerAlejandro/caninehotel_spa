@@ -1,0 +1,60 @@
+{% extends 'base_caninehotel.html' %}
+{% block title %}-mascotas{% endblock %}
+{% load static %}
+
+{% block body %}
+
+	<div class = 'container'>
+		<section class = "sample-text-area">
+			<h3 class="text-heading title_color">Seccion de mascotas</h3>
+		</section>
+
+		<div class = 'progress-table-wrap'>
+			<div class = 'progress-table'>
+				<div class = 'table-head spacing-head'>
+					
+				</div>
+			</div>
+		</div>
+
+		<form>
+
+			<br>Cliente<br>
+
+			<input type="text" name="owner.dni" placeholder="Cedula" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Cedula'" required class="single-input">
+
+			<input type="text" name="owner.first_name" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'" required class="single-input">
+
+			<input type="text" name="owner.last_name" placeholder="Apellido" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Apellido'" required class="single-input">
+
+			<input type="text" name="owner.email" placeholder="Correo" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Correo'" required class="single-input">
+
+			<br>Mascota<br>
+
+			<input type="text" name="name" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'" required class="single-input">
+			<input type="text" name="age" placeholder="Edad" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Edad'" required class="single-input">
+			<input type="text" name="race" placeholder="Raza" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Raza'" required class="single-input">
+
+			<select id = "select-room" name = 'room'>
+				
+			</select>
+
+			<select id = "select-service" multiple = "multiple" ltiple name = 'services'>
+				
+			</select>
+
+			<select name = 'gender' class="single-input">
+				<option value="h">HEMBRA</option>
+				<option value="m">MACHO</option>
+			</select>
+
+			<button class="genric-btn primary mt-10">GUARDAR</button>
+		</form>
+	</div>
+
+
+{% endblock %}
+
+{% block custom_scripts %}
+	<script type="text/javascript" src = "{% static 'pet.js' %}"></script>
+{% endblock %}

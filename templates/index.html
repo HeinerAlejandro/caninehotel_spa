@@ -1,0 +1,73 @@
+{% extends 'base_caninehotel.html' %}
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	{% load static %}
+	
+</head>
+
+<body>
+
+	<div class="menu-trigger">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	
+
+	<!--================ End Header Menu Area =================-->
+	{% block body %}
+
+		<!--================ Start Home Banner Area =================-->
+		<section class="home_banner_area">
+			<div class="banner_inner">
+				<div class="container-fluid no-padding">
+					<div class="row fullscreen">
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Start banner bottom -->
+		<div class="row banner-bottom align-items-center justify-content-center">
+			<div class="col-lg-4">
+				<div class="video-popup d-flex align-items-center">
+					<a class="play-video video-play-button animate" href="https://www.youtube.com/watch?v=KUln2DXU5VE" data-animate="zoomIn"
+					 data-duration="1.5s" data-delay="0.1s">
+						<span><img src="{% static 'img/banner/play-icon.png' %}" alt=""></span>
+					</a>
+					<div class="watch">
+						<h6>Ver video</h6>
+						<p>Dale un dia especial a tu canino</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-8">
+				<div class="banner_content">
+					<div class="row d-flex align-items-center">
+						<div class="col-lg-8 col-md-12">
+							<p class="top-text">Caninehotel te ofrece los mejores precios</p>
+							<h1>Canine Hotel</h1>
+							<p>toc, toc...¿Quien es?...¡Tu mascota, necesita un tiempo de relajacion y compensacion por ser el amigo peludo mas tierno del hogar!...¿Que esperas?, tu amiguito te lo agradecera</p>
+						</div>
+						<div class="col-lg-4 col-md-12">
+							<div class="banner-btn">
+								<a class="primary-btn text-uppercase" href="#">INSTALACIONES</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	{% endblock %}
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+</body>
+
+</html>

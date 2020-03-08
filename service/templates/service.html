@@ -1,0 +1,37 @@
+{% extends 'base_caninehotel.html' %}
+
+{% block title %}-servicio{% endblock %}
+
+{% load static %}
+
+{% block body %}
+
+	<div class = 'container'>
+		<section class = "sample-text-area">
+			<h3 class="text-heading title_color">Seccion de Servicios</h3>
+		</section>
+
+		<div class = 'progress-table-wrap'>
+			<div class = 'progress-table'>
+				<div class = 'table-head spacing-head'>
+					
+				</div>
+			</div>
+		</div>
+
+		<form>
+
+			<input type="text" name="description" placeholder="Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'" required class="single-input">
+			<input type="number" name="cost" placeholder="Costo" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Costo'" required class="single-input">
+			
+			<button class="genric-btn primary mt-10">GUARDAR</button>
+		</form>
+
+	</div>
+
+
+{% endblock %}
+
+{% block custom_scripts %}
+	<script type="text/javascript" src = "{% static 'service.js' %}"></script>
+{% endblock %}

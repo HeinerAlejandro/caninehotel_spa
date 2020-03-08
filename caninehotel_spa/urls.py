@@ -14,17 +14,35 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from django.views.generic import TemplateView
+from django.conf import settings
 
 from rest_framework.routers import DefaultRouter
 
 from pet.views import PetViewSet, OwnerViewSet
 
+from service.views import ServiceViewSet
+
+from room.views import RoomViewSet
+
 router = DefaultRouter()
 
-router.register(r'owner', OwnerViewSet, basename = 'owner')
-router.register(r'pet', PetViewSet, basename = 'pet')
+router.register(r'owners', OwnerViewSet, basename = 'owner')
+router.register(r'pets', PetViewSet, basename = 'pet')
+router.register(r'services', ServiceViewSet, basename = 'service')
+router.register(r'rooms', RoomViewSet, basename = 'room')
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('home', TemplateView.as_view(template_name = 'index.html'), name = 'home'),
+    path('pet-web', TemplateView.as_view(template_name = 'pet.html') , name = 'pet'),
+    path('room-web', TemplateView.as_view(template_name = 'room.html') , name = 'room'),
+    path('service-web', TemplateView.as_view(template_name = 'service.html') , name = 'service'),
 ]
+
+if settings.DEBUG:
+
+	from django.contrib.staticfiles import views
+
+	urlpatterns += re_path(r'^static/(?P<path>.*)$', views.serve),
